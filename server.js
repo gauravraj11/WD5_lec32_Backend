@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require("./config/db.js")
+const userRoute = require('./routes/userRoute.js');
+
+
 
 // It is used to load environment variables from a .env file into process.env in a Node.js application.
 const dotenv = require('dotenv')
@@ -18,6 +21,7 @@ server.use(cors())
 connectDB();
 
 // api endpoints
+server.use('/api/user', userRoute);
 
 
 
